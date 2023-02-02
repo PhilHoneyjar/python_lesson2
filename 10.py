@@ -7,20 +7,21 @@
 
 from random import randint
 
-def get_list():
-    length = randint(1, 10)
-    list = []
-    for i in range(length):
-        list.append(randint(0, 1))
-    print(list)
-    return list
+
+def get_coin_toss_list():
+    list_length = randint(1, 10)
+    coin_toss_list = []
+    for i in range(list_length):
+        coin_toss_list.append(randint(0, 1))
+    print(coin_toss_list)
+    return coin_toss_list
 
 
-def count_values(list):
-    counter = 0
-    for x in list:
-        counter += x
-    return counter if counter <= len(list)/2 else len(list) - counter
+def count_heads(coin_toss_list):
+    heads_counter = 0
+    for x in coin_toss_list:
+        heads_counter += x
+    return heads_counter if heads_counter <= len(coin_toss_list)/2 else len(coin_toss_list) - heads_counter
 
 
-print(count_values(get_list()))
+print(count_heads(get_coin_toss_list()))
